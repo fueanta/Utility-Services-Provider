@@ -1,9 +1,6 @@
+C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\Repositories.dll.config
 C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\Repositories.dll
 C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\Repositories.pdb
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\obj\Debug\Repositories.csproj.CoreCompileInputs.cache
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\obj\Debug\Repositories.dll
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\obj\Debug\Repositories.pdb
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\Repositories.dll.config
 C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\Data.dll
 C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\Entities.dll
 C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\EntityFramework.dll
@@ -17,4 +14,7 @@ C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\Interf
 C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\EntityFramework.xml
 C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\obj\Debug\Repositories.csprojAssemblyReference.cache
+C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\obj\Debug\Repositories.csproj.CoreCompileInputs.cache
 C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\obj\Debug\Repositories.csproj.CopyComplete
+C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\obj\Debug\Repositories.dll
+C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\obj\Debug\Repositories.pdb
