@@ -18,3 +18,15 @@ C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\obj\Debug\Reposi
 C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\obj\Debug\Repositories.csproj.CopyComplete
 C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\obj\Debug\Repositories.dll
 C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\obj\Debug\Repositories.pdb
+C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\System.Web.Helpers.dll
+C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\System.Web.Razor.dll
+C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\System.Web.WebPages.dll
+C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\System.Web.Helpers.xml
+C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\System.Web.Mvc.xml
+C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\System.Web.Razor.xml
+C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\System.Web.WebPages.xml
+C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\System.Web.WebPages.Razor.xml
