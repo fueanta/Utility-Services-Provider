@@ -9,6 +9,7 @@ namespace Interfaces
     }
     public interface ICity : IRepository<City> { }
     public interface IClient : IRepository<Client> { }
+    public interface IEmployee : IRepository<Employee> { }
     public interface IUserLogin : IRepository<UserLogin> { }
     public interface IRepository<T> where T : Entity
     {

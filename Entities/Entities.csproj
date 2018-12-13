@@ -45,6 +45,7 @@
     <Compile Include="Area.cs" />
     <Compile Include="City.cs" />
     <Compile Include="Client.cs" />
+    <Compile Include="Employee.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ParentUser.cs" />

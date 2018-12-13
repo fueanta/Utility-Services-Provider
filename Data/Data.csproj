@@ -68,6 +68,14 @@
     <Compile Include="Migrations\201812080907408_UserTypeEnum.Designer.cs">
       <DependentUpon>201812080907408_UserTypeEnum.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812120825222_EmployeeAddition.cs" />
+    <Compile Include="Migrations\201812120825222_EmployeeAddition.Designer.cs">
+      <DependentUpon>201812120825222_EmployeeAddition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812131655211_FakeId.cs" />
+    <Compile Include="Migrations\201812131655211_FakeId.Designer.cs">
+      <DependentUpon>201812131655211_FakeId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DB_Context.cs" />
@@ -97,6 +105,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812080907408_UserTypeEnum.resx">
       <DependentUpon>201812080907408_UserTypeEnum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812120825222_EmployeeAddition.resx">
+      <DependentUpon>201812120825222_EmployeeAddition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812131655211_FakeId.resx">
+      <DependentUpon>201812131655211_FakeId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -13,6 +13,11 @@ namespace Data.Migrations
             Sql("INSERT INTO AREAS (Name, CityId) VALUES ('Bashundhara', 1)");
             Sql("INSERT INTO AREAS (Name, CityId) VALUES ('Mirpur', 1)");
             Sql("INSERT INTO AREAS (Name, CityId) VALUES ('Mohammadpur', 1)");
+
+            Sql("INSERT INTO CITIES (Name) VALUES ('Chottogram')");
+            Sql("INSERT INTO AREAS (Name, CityId) VALUES ('Andorkilla', 2)");
+            Sql("INSERT INTO AREAS (Name, CityId) VALUES ('Chalk Bazar', 2)");
+            Sql("INSERT INTO AREAS (Name, CityId) VALUES ('Bohoddor Hut', 2)");
         }
         
         public override void Down()

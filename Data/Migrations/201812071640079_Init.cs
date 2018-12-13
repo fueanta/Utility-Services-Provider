@@ -32,7 +32,7 @@ namespace Data.Migrations
                 "dbo.Clients",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: false),
+                        Id = c.Int(nullable: false, identity: true),
                         CityId = c.Int(),
                         AreaId = c.Int(),
                         Name = c.String(),

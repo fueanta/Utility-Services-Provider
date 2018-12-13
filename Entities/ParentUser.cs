@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Entities
 {
@@ -11,6 +7,7 @@ namespace Entities
     public class ParentUser : Entity
     {
         // Id from Entity
+        public int FakeId { get; set; }
         [Required]
         public string Name { get; set; }
         public string Address { get; set; }

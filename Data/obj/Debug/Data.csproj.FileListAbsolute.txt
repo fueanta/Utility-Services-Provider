@@ -18,3 +18,5 @@ C:\Users\Taki\source\repos\UtilityServicesProvider\Data\obj\Debug\Data.csproj.Co
 C:\Users\Taki\source\repos\UtilityServicesProvider\Data\obj\Debug\Data.csproj.CopyComplete
 C:\Users\Taki\source\repos\UtilityServicesProvider\Data\obj\Debug\Data.dll
 C:\Users\Taki\source\repos\UtilityServicesProvider\Data\obj\Debug\Data.pdb
+C:\Users\Taki\source\repos\UtilityServicesProvider\Data\obj\Debug\Data.Migrations.EmployeeAddition.resources
+C:\Users\Taki\source\repos\UtilityServicesProvider\Data\obj\Debug\Data.Migrations.FakeId.resources

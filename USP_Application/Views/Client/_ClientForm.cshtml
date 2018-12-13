@@ -53,6 +53,7 @@ else
     @Html.TextBoxFor(m => m.UserLogin.Password, new { @class = "form-control", @type = "password", @placeholder = "Minimum 6 characters" })
 </div>
 @Html.HiddenFor(m => m.Client.Id)
+@Html.HiddenFor(m => m.Client.FakeId)
 @Html.HiddenFor(m => m.Client.JoiningDate)
 @Html.HiddenFor(m => m.UserLogin.Id)
 @Html.HiddenFor(m => m.UserLogin.UserType)

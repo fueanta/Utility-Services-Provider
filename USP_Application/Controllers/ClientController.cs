@@ -39,10 +39,10 @@ namespace USP_Application.Controllers
 
             var query =
                 from userLogin in userLogins
-                join client in clients on userLogin.Id equals client.Id
+                join client in clients on userLogin.Id equals client.FakeId
                 select new ClientUserLoginModel
                 {
-                    Id = client.Id,
+                    Id = client.FakeId,
                     Name = client.Name,
                     Phone = userLogin.Phone,
                     Email = userLogin.Email,
@@ -71,18 +71,19 @@ namespace USP_Application.Controllers
             if (viewModel.UserLogin.Id == 0) // Create
             {
                 viewModel.Client.JoiningDate = DateTime.Now;
-                viewModel.Client.Id = userLoginRepository.GetAll().Count() + 1;
                 viewModel.UserLogin.UserType = Entities.UserType.Client;
 
-                clientRepository.Insert(viewModel.Client);
                 userLoginRepository.Insert(viewModel.UserLogin);
+                viewModel.Client.FakeId = viewModel.UserLogin.Id;
+                clientRepository.Insert(viewModel.Client);
+                
                 return RedirectToAction("ClientList", "Client");
             }
             else // Update
             {
                 var client = clientRepository.Update(viewModel.Client);
                 var userLogin = userLoginRepository.Update(viewModel.UserLogin);
-                return RedirectToAction("Details", "Client", new { id = viewModel.Client.Id });
+                return RedirectToAction("Details", "Client", new { id = viewModel.Client.FakeId });
             }
         }
 
