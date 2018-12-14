@@ -170,6 +170,7 @@
     <Compile Include="Models\ClientUserLoginModel.cs" />
     <Compile Include="Models\EmployeeUserLoginModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AreaFormViewModel.cs" />
     <Compile Include="ViewModels\ClientFormViewModel.cs" />
     <Compile Include="ViewModels\ClientListViewModel.cs" />
     <Compile Include="ViewModels\EmployeeFormViewModel.cs" />
@@ -225,6 +226,9 @@
     <Content Include="Views\Employee\_EmployeeForm.cshtml" />
     <Content Include="Views\Employee\Details.cshtml" />
     <Content Include="Views\Employee\Edit.cshtml" />
+    <Content Include="Views\Area\Insert.cshtml" />
+    <Content Include="Views\Area\Edit.cshtml" />
+    <Content Include="Views\Area\_AreaForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

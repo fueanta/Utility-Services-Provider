@@ -40,7 +40,9 @@
                                     '<th scope="row">' + value.Id + '</th>' +
                                     '<td>' + value.Name + '</td>' +
                                     '<td>' + value.City.Name + '</td>' +
-                                    '<td><a href="/Area/Details?id=' + value.Id + '">More</a></td>' +
+                                    '<td align="right"><a href="/Area/Edit?id=' + value.Id + '">Edit</a></td>' +
+                                    '<td align="center">|</td>' +
+                                    '<td><a href="/Area/Remove?id=' + value.Id + '" onclick="return confirm(\'Are you sure to delete this area ?\');">Delete</a></td>' +
                                     '</tr>';
                                 setData.append(tableData);
                             });
