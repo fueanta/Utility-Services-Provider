@@ -12,14 +12,16 @@ namespace USP_Application.Controllers
     public class JsonController : Controller
     {
         IClient clientRepository;
+        ILabour labourRepository;
         IEmployee employeeRepository;
         IUserLogin userLoginRepository;
         ICity cityRepository;
         IArea areaRepository;
 
-        public JsonController(IClient clRepo, IEmployee emRepo, IUserLogin ulRepo, ICity ctRepo, IArea arRepo)
+        public JsonController(IClient clRepo, ILabour labRepo, IEmployee emRepo, IUserLogin ulRepo, ICity ctRepo, IArea arRepo)
         {
             clientRepository = clRepo;
+            labourRepository = labRepo;
             employeeRepository = emRepo;
             userLoginRepository = ulRepo;
             cityRepository = ctRepo;
@@ -136,6 +138,70 @@ namespace USP_Application.Controllers
         }
         /*Client-List Search*/
 
+        /*Labour-List Search*/
+
+        public JsonResult SearchLabourList(string searchBy, string searchValue, int? page, int? rows)
+        {
+            var pageNo = page ?? 1;
+            var numOfRows = rows ?? 5;
+
+            List<Labour> labourList = labourRepository.GetAll().ToList();
+            List<UserLogin> userLogins = userLoginRepository.GetAll().ToList();
+
+            switch (searchBy)
+            {
+                case "phone":
+                    //search by phone
+                    userLogins = userLogins.Where(u => u.Phone.ToLower().Contains(searchValue.ToLower()) || searchValue == null).ToList();
+                    break;
+                case "email":
+                    //search by email
+                    userLogins = userLogins.Where(u => u.Email.ToLower().Contains(searchValue.ToLower()) || searchValue == null).ToList();
+                    break;
+                case "city":
+                    //search by city
+                    labourList = labourList.Where(l => l.City.Name.ToLower().Contains(searchValue.ToLower()) || searchValue == null).ToList();
+                    break;
+                case "area":
+                    //search by area
+                    labourList = labourList.Where(l => l.Area.Name.ToLower().Contains(searchValue.ToLower()) || searchValue == null).ToList();
+                    break;
+                case "id":
+                    //search by id
+                    labourList = labourList.Where(l => l.FakeId.ToString().ToLower().Contains(searchValue.ToLower()) || searchValue == null).ToList();
+                    break;
+                case "wallet":
+                    //search by wallet
+                    labourList = labourList.Where(l => l.Wallet.ToString().ToLower().Contains(searchValue.ToLower()) || searchValue == null).ToList();
+                    break;
+                default:
+                    //by default, search by name
+                    labourList = labourList.Where(l => l.Name.ToLower().Contains(searchValue.ToLower()) || searchValue == null).ToList();
+                    break;
+            }
+
+            IEnumerable<LabourUserLoginModel> labourUserLoginModel;
+
+            if (searchBy.Equals("phone") | searchBy.Equals("email"))
+            {
+                labourUserLoginModel =
+                   from userLogin in userLogins
+                   join labour in labourList on userLogin.Id equals labour.FakeId
+                   select new LabourUserLoginModel { Id = labour.FakeId, Name = labour.Name, City = labour.City.Name, Area = labour.Area.Name, Phone = userLogin.Phone, Email = userLogin.Email };
+            }
+            else
+            {
+                labourUserLoginModel =
+                   from labour in labourList
+                   join userLogin in userLogins on labour.FakeId equals userLogin.Id
+                   select new LabourUserLoginModel { Id = labour.FakeId, Name = labour.Name, City = labour.City.Name, Area = labour.Area.Name, Phone = userLogin.Phone, Email = userLogin.Email };
+            }
+
+            return Json(labourUserLoginModel, JsonRequestBehavior.AllowGet);
+            // .ToPagedList(pageNo, numOfRows)
+        }
+        /*Labour-List Search*/
+
         /*Employee-List Search*/
 
         public JsonResult SearchEmployeeList(string searchBy, string searchValue, int? page, int? rows)
@@ -194,6 +260,6 @@ namespace USP_Application.Controllers
             return Json(employeeUserLoginModel, JsonRequestBehavior.AllowGet);
             // .ToPagedList(pageNo, numOfRows)
         }
-        /*Client-List Search*/
+        /*Employee-List Search*/
     }
 }

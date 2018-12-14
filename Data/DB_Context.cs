@@ -12,6 +12,7 @@ namespace Data
     {
         public DbSet<UserLogin> UserLogins { get; set; }
         public DbSet<Client> Clients { get; set; }
+        public DbSet<Labour> Labours { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<Area> Areas { get; set; }

@@ -31,6 +31,7 @@ namespace USP_Application
 
             container.RegisterType<DB_Context, DB_Context>();
             container.RegisterType<IClient, ClientRepository>();
+            container.RegisterType<ILabour, LabourRepository>();
             container.RegisterType<IEmployee, EmployeeRepository>();
             container.RegisterType<IUserLogin, UserLoginRepository>();
             container.RegisterType<ICity, CityRepository>();

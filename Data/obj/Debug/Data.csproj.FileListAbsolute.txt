@@ -20,3 +20,4 @@ C:\Users\Taki\source\repos\UtilityServicesProvider\Data\obj\Debug\Data.dll
 C:\Users\Taki\source\repos\UtilityServicesProvider\Data\obj\Debug\Data.pdb
 C:\Users\Taki\source\repos\UtilityServicesProvider\Data\obj\Debug\Data.Migrations.EmployeeAddition.resources
 C:\Users\Taki\source\repos\UtilityServicesProvider\Data\obj\Debug\Data.Migrations.FakeId.resources
+C:\Users\Taki\source\repos\UtilityServicesProvider\Data\obj\Debug\Data.Migrations.AdditionOfLabours.resources

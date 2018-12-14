@@ -73,6 +73,7 @@
     <Compile Include="CityRepository.cs" />
     <Compile Include="ClientRepository.cs" />
     <Compile Include="EmployeeRepository.cs" />
+    <Compile Include="LabourRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
     <Compile Include="UserLoginRepository.cs" />

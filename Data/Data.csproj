@@ -76,6 +76,10 @@
     <Compile Include="Migrations\201812131655211_FakeId.Designer.cs">
       <DependentUpon>201812131655211_FakeId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812140525027_AdditionOfLabours.cs" />
+    <Compile Include="Migrations\201812140525027_AdditionOfLabours.Designer.cs">
+      <DependentUpon>201812140525027_AdditionOfLabours.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DB_Context.cs" />
@@ -111,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812131655211_FakeId.resx">
       <DependentUpon>201812131655211_FakeId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812140525027_AdditionOfLabours.resx">
+      <DependentUpon>201812140525027_AdditionOfLabours.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -164,16 +164,19 @@
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JsonController.cs" />
+    <Compile Include="Controllers\LabourController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ClientUserLoginModel.cs" />
     <Compile Include="Models\EmployeeUserLoginModel.cs" />
+    <Compile Include="Models\LabourUserLoginModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AreaFormViewModel.cs" />
     <Compile Include="ViewModels\ClientFormViewModel.cs" />
     <Compile Include="ViewModels\ClientListViewModel.cs" />
     <Compile Include="ViewModels\EmployeeFormViewModel.cs" />
+    <Compile Include="ViewModels\LabourFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -229,6 +232,11 @@
     <Content Include="Views\Area\Insert.cshtml" />
     <Content Include="Views\Area\Edit.cshtml" />
     <Content Include="Views\Area\_AreaForm.cshtml" />
+    <Content Include="Views\Labour\LabourList.cshtml" />
+    <Content Include="Views\Labour\Details.cshtml" />
+    <Content Include="Views\Labour\Edit.cshtml" />
+    <Content Include="Views\Labour\_LabourForm.cshtml" />
+    <Content Include="Views\Labour\Insert.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
