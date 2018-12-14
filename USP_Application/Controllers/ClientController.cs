@@ -52,6 +52,16 @@ namespace USP_Application.Controllers
             return View(query.ToList().ToPagedList(pageNo, numOfRows));
         }
 
+        public ActionResult Insert()
+        {
+            var cities = cityRepository.GetAll().OrderBy(c => c.Name);
+            var viewModel = new ClientFormViewModel
+            {
+                Cities = cities
+            };
+            return View(viewModel);
+        }
+
         public ActionResult Details(int id)
         {
             var client = clientRepository.Get(id);

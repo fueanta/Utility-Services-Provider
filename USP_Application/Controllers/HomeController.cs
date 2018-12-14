@@ -38,13 +38,7 @@ namespace USP_Application.Controllers
 
         public ActionResult Register()
         {
-            var cities = cityRepository.GetAll().OrderBy(c => c.Name);
-            //var areas = _context.Areas.ToList();
-            var viewModel = new ClientFormViewModel
-            {
-                Cities = cities/*, Areas = areas*/
-            };
-            return View(viewModel);
+            return RedirectToAction("Insert", "Client");
         }
     }
 }
