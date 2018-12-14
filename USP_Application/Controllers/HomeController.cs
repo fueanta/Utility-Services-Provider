@@ -1,5 +1,6 @@
 ﻿using Data;
 using Entities;
+using Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,11 @@ namespace USP_Application.Controllers
 {
     public class HomeController : Controller
     {
-        public DB_Context _context = new DB_Context();
-
+        ICity cityRepository;
+        public HomeController(ICity ctRepo)
+        {
+            cityRepository = ctRepo;
+        }
         public ActionResult Index()
         {
             return View();
@@ -34,7 +38,7 @@ namespace USP_Application.Controllers
 
         public ActionResult Register()
         {
-            var cities = _context.Cities.ToList().OrderBy(c => c.Name);
+            var cities = cityRepository.GetAll().OrderBy(c => c.Name);
             //var areas = _context.Areas.ToList();
             var viewModel = new ClientFormViewModel
             {

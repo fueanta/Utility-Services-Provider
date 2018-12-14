@@ -27,7 +27,7 @@ namespace USP_Application.Controllers
             var pageNo = page ?? 1;
             var numOfRows = rows ?? 5;
 
-            var areas = areaRepository.GetAll().ToList().ToPagedList(pageNo, numOfRows);
+            var areas = areaRepository.GetAll().OrderBy(a => a.City.Name).ToList().ToPagedList(pageNo, numOfRows);
             return View(areas);
         }
     }

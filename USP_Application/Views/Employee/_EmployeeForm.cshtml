@@ -35,6 +35,7 @@
     @Html.TextBoxFor(m => m.UserLogin.Password, new { @class = "form-control", @type = "password", @placeholder = "Minimum 6 characters" })
 </div>
 @Html.HiddenFor(m => m.Employee.Id)
+@Html.HiddenFor(m => m.Employee.FakeId)
 @Html.HiddenFor(m => m.Employee.JoiningDate)
 @Html.HiddenFor(m => m.UserLogin.Id)
 @Html.HiddenFor(m => m.UserLogin.UserType)

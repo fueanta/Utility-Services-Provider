@@ -55,6 +55,18 @@ namespace USP_Application.Controllers
             return View();
         }
 
+        public ActionResult Details(int id)
+        {
+            var employee = employeeRepository.Get(id);
+            var userLogin = userLoginRepository.Get(id);
+            var viewModel = new EmployeeFormViewModel
+            {
+                Employee = employee,
+                UserLogin = userLogin
+            };
+            return View(viewModel);
+        }
+
         [HttpPost]
         public ActionResult CreateOrUpdate(EmployeeFormViewModel viewModel) // model binding
         {
@@ -81,6 +93,30 @@ namespace USP_Application.Controllers
                 var userLogin = userLoginRepository.Update(viewModel.UserLogin);
                 return RedirectToAction("Details", "Employee", new { id = viewModel.Employee.FakeId });
             }
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var employee = employeeRepository.Get(id);
+            var userLogin = userLoginRepository.Get(id);
+
+            if (employee == null)
+            {
+                return HttpNotFound();
+            }
+            var viewModel = new EmployeeFormViewModel
+            {
+                Employee = employee,
+                UserLogin = userLogin
+            };
+            return View(viewModel);
+        }
+
+        public ActionResult Remove(int id)
+        {
+            employeeRepository.Delete(employeeRepository.Get(id));
+            userLoginRepository.Delete(userLoginRepository.Get(id));
+            return RedirectToAction("EmployeeList", "Employee");
         }
     }
 }

@@ -13,11 +13,5 @@ namespace Repositories
         {
             return Context.Set<Employee>().SingleOrDefault(e => e.FakeId == id);
         }
-
-        public override int Delete(Employee g)
-        {
-            Context.Set<Employee>().Remove(Get(g.FakeId));
-            return Context.SaveChanges();
-        }
     }
 }

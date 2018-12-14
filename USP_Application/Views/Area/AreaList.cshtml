@@ -69,28 +69,31 @@
 
         <div class="panel-body">
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-2">
                     <p style="font-size:xx-large;">Area List</p>
                 </div>
-                <div class="col-md-7">
+                <div style="margin-left:60px;" class="col-md-9">
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <select id="SearchBy" name="SearchBy" class="form-control">
                                 <option value="id">Search by Id</option>
                                 <option value="name" selected>Search by Name</option>
                                 <option value="city">Search by City</option>
                             </select>
                         </div>
-                        <div class="col-md-6">
+
+                        <div class="col-md-4">
                             <input id="SearchBox" class="form-control" type="text" placeholder="Search here ..." value="" />
                         </div>
                         <div class="col-md-1">
                             <input id="SearchBtn" class="btn btn-success" type="submit" value="Search" />
                         </div>
+                        <div style="margin-left:100px;" class="col-md-1">
+                            <a href="/Area/Insert/"><button style="margin-left:25px;min-width: 77px;" class="btn btn-warning">Add New Area</button></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div>        </div>
 
         @if (Model == null | Model.Count() == 0)
         {
@@ -105,6 +108,8 @@
                             <th scope="col">#</th>
                             <th scope="col">Name</th>
                             <th scope="col">City</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
                             <th scope="col"></th>
                         </tr>
                     </thead>
@@ -122,7 +127,13 @@
                                 <td>
                                     @Html.DisplayFor(modelItem => area.City.Name)
                                 </td>
-                                <td>@Html.ActionLink("More", "Details", "Area", new { id = area.Id }, null)</td>
+                                <td align="right">
+                                    @Html.ActionLink("Edit", "Edit", "Area", new { id = area.Id }, null)
+                                </td>
+                                <td align="center">|</td>
+                                <td>
+                                    <a href="/Area/Remove/@area.Id" onclick="return confirm('Are you sure to delete this area?');">Delete</a>
+                                </td>
                             </tr>
                         }
                     </tbody>

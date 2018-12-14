@@ -9,7 +9,7 @@ namespace Repositories
 {
     public class Repository<T> : IRepository<T> where T : Entity
     {
-        public DB_Context _context;
+        private DB_Context _context;
 
         public DB_Context Context { get => _context; }
 
@@ -40,7 +40,7 @@ namespace Repositories
             return Context.SaveChanges();
         }
 
-        virtual public int Delete(T g)
+        public int Delete(T g)
         {
             Context.Set<T>().Remove(g);
             return Context.SaveChanges();
