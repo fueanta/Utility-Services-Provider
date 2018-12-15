@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace USP_Application.Models
+﻿namespace USP_Application.Models
 {
     public class LabourUserLoginModel
     {

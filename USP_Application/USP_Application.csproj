@@ -177,6 +177,7 @@
     <Compile Include="ViewModels\ClientListViewModel.cs" />
     <Compile Include="ViewModels\EmployeeFormViewModel.cs" />
     <Compile Include="ViewModels\LabourFormViewModel.cs" />
+    <Compile Include="ViewModels\LoginFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -237,6 +238,8 @@
     <Content Include="Views\Labour\_LabourForm.cshtml" />
     <Content Include="Views\Labour\Insert.cshtml" />
     <Content Include="Views\Client\Insert.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\_LoginForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
