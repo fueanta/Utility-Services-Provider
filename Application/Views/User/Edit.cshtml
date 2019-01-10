@@ -1,0 +1,74 @@
+﻿@model ViewModels.UserFormViewModel
+
+@{
+    ViewBag.Title = Model.User.FirstName + " " + Model.User.LastName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var user = Application.Controllers.HomeController.LoggedUser;
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/jscript">
+        $(function () {
+            $('#City').change(function () {
+                $("#Area").html(
+                    "<option value>Select area</option>")
+                $.getJSON('/AreaJsonByCity/AreaList/' + $('#City').val(), function (data) {
+                    $.each(data, function (i, area) {
+                        $("#Area").append(
+                            "<option value=" + area.Value + ">" + area.Text + "</option>")
+                    });
+                });
+            });
+        });
+
+        // highlight current page on navbar
+        $(function () {
+            // this will get the full URL at the address bar
+            var url = window.location.href;
+
+            // passes on every "a" tag
+            $("#navbarColor01 ul li a").each(function () {
+                // checks if its the same on the address bar
+                if (url == (this.href)) {
+                    $(this).closest("li").addClass("active");
+                    //for making parent of submenu active
+                    $(this).closest("li").parent().parent().addClass("active");
+                }
+            });
+        });
+
+    </script>
+}
+
+<div class="container">
+    <div class="row";>
+        <fieldset class="col-md-6">
+
+            @if (Model.User.Id == user.Id)
+            {
+                <legend class="col-form-label-lg">Update your information</legend>
+            }
+            else if (Model.User.UserType == Models.UserType.Employee)
+            {
+                <legend class="col-form-label-lg">Update employee details</legend>
+            }
+
+            @using (Html.BeginForm("update", "user"))
+            {
+                @Html.Partial("../User/_Form", Model)
+
+                @Html.AntiForgeryToken()
+
+                <div class="row" style="margin-top:.7em;margin-bottom:1em;">
+                    <div class="btn-group col-md-12">
+                        <button type="submit" class="btn btn-primary col-md-12">Update</button>
+                    </div>
+                </div>
+            }
+
+        </fieldset>
+    </div>
+</div>

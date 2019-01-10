@@ -1,21 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web.Mvc;
 using Data;
-using Entities;
 using Interfaces;
+using Models;
 
 namespace Repositories
 {
     public class Repository<T> : IRepository<T> where T : Entity
     {
-        private DB_Context _context;
+        public UspDbContext Context;
 
-        public DB_Context Context { get => _context; }
-
-        public Repository(DB_Context context)
+        public Repository(UspDbContext dbContext)
         {
-            this._context = context;
+            Context = dbContext;
         }
 
         public IEnumerable<T> GetAll()
@@ -23,7 +20,7 @@ namespace Repositories
             return Context.Set<T>().ToList();
         }
 
-        virtual public T Get(int id)
+        public T Get(int id)
         {
             return Context.Set<T>().Find(id);
         }

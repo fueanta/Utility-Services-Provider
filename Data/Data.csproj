@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AFD34521-3178-452A-A98C-4B17CDEADF45}</ProjectGuid>
+    <ProjectGuid>{C6931CEA-81B8-4B87-AF30-BB4B698845E4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Data</RootNamespace>
@@ -48,76 +48,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201812071640079_Init.cs" />
-    <Compile Include="Migrations\201812071640079_Init.Designer.cs">
-      <DependentUpon>201812071640079_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812071723301_GenderAdded.cs" />
-    <Compile Include="Migrations\201812071723301_GenderAdded.Designer.cs">
-      <DependentUpon>201812071723301_GenderAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812071850368_PopulateCitiesNAreas.cs" />
-    <Compile Include="Migrations\201812071850368_PopulateCitiesNAreas.Designer.cs">
-      <DependentUpon>201812071850368_PopulateCitiesNAreas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812080818591_JqueryCityArea.cs" />
-    <Compile Include="Migrations\201812080818591_JqueryCityArea.Designer.cs">
-      <DependentUpon>201812080818591_JqueryCityArea.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812080907408_UserTypeEnum.cs" />
-    <Compile Include="Migrations\201812080907408_UserTypeEnum.Designer.cs">
-      <DependentUpon>201812080907408_UserTypeEnum.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812120825222_EmployeeAddition.cs" />
-    <Compile Include="Migrations\201812120825222_EmployeeAddition.Designer.cs">
-      <DependentUpon>201812120825222_EmployeeAddition.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812131655211_FakeId.cs" />
-    <Compile Include="Migrations\201812131655211_FakeId.Designer.cs">
-      <DependentUpon>201812131655211_FakeId.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812140525027_AdditionOfLabours.cs" />
-    <Compile Include="Migrations\201812140525027_AdditionOfLabours.Designer.cs">
-      <DependentUpon>201812140525027_AdditionOfLabours.cs</DependentUpon>
+    <Compile Include="Migrations\201901020052308_Init.cs" />
+    <Compile Include="Migrations\201901020052308_Init.Designer.cs">
+      <DependentUpon>201901020052308_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DB_Context.cs" />
+    <Compile Include="UspDbContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Entities\Entities.csproj">
-      <Project>{f3f50d2e-bd69-4137-92e0-b4ee58a16218}</Project>
-      <Name>Entities</Name>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{f71bf2e2-f892-4a74-b1b3-5f2a96631592}</Project>
+      <Name>Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201812071640079_Init.resx">
-      <DependentUpon>201812071640079_Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812071723301_GenderAdded.resx">
-      <DependentUpon>201812071723301_GenderAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812071850368_PopulateCitiesNAreas.resx">
-      <DependentUpon>201812071850368_PopulateCitiesNAreas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812080818591_JqueryCityArea.resx">
-      <DependentUpon>201812080818591_JqueryCityArea.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812080907408_UserTypeEnum.resx">
-      <DependentUpon>201812080907408_UserTypeEnum.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812120825222_EmployeeAddition.resx">
-      <DependentUpon>201812120825222_EmployeeAddition.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812131655211_FakeId.resx">
-      <DependentUpon>201812131655211_FakeId.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812140525027_AdditionOfLabours.resx">
-      <DependentUpon>201812140525027_AdditionOfLabours.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201901020052308_Init.resx">
+      <DependentUpon>201901020052308_Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

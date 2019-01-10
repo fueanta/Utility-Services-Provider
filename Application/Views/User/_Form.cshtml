@@ -1,0 +1,88 @@
+﻿@model ViewModels.UserFormViewModel
+
+@Html.ValidationSummary(true, "Your attention is required in the following marked areas")
+
+<div class="row">
+    <div class="form-group col-sm-6">
+        @Html.LabelFor(m => m.User.FirstName)
+        @Html.TextBoxFor(m => m.User.FirstName, new { @class = "form-control col-sm-12", @placeholder = "Ex: Fahim" })
+        @Html.ValidationMessageFor(m => m.User.FirstName)
+    </div>
+    <div class="form-group col-sm-6">
+        @Html.LabelFor(m => m.User.LastName)
+        @Html.TextBoxFor(m => m.User.LastName, new { @class = "form-control col-sm-12", @placeholder = "Ex: Ahmed" })
+        @Html.ValidationMessageFor(m => m.User.LastName)
+    </div>
+</div>
+
+<div class="row">
+    <div class="form-group col-sm-6">
+        @Html.LabelFor(m => m.User.DateOfBirth)
+        @Html.TextBoxFor(m => m.User.DateOfBirth, "{0:dd-MMM-yyyy}", new { @class = "form-control col-sm-12", @placeholder = "Ex: 18-Apr-1995" })
+        @Html.ValidationMessageFor(m => m.User.DateOfBirth)
+    </div>
+    <div class="form-group col-sm-6">
+        @Html.LabelFor(m => m.User.Gender)
+        @Html.DropDownListFor(m => m.User.Gender, new SelectList(Enum.GetValues(typeof(Models.Gender))), "Select gender",
+                                                    new { @class = "form-control col-sm-12" })
+        @Html.ValidationMessageFor(m => m.User.Gender)
+    </div>
+</div>
+
+<div class="row">
+    <div class="form-group col-sm-6">
+        @Html.LabelFor(m => m.User.CityId)
+        @Html.DropDownListFor(m => m.User.CityId, new SelectList(Model.Cities, "Id", "Name"), "Select city",
+                                                    new { @class = "form-control col-sm-12", id = "City" })
+        @Html.ValidationMessageFor(m => m.User.CityId)
+    </div>
+    <div class="form-group col-sm-6">
+        @Html.LabelFor(m => m.User.AreaId)
+        @if (Model.Areas == null)
+        {
+            @Html.DropDownListFor(m => m.User.AreaId,
+            new SelectList(Enumerable.Empty<SelectListItem>(), "Id", "Name"), "Select area",
+            new { @class = "form-control col-sm-12", id = "Area" })
+        }
+        else
+        {
+            @Html.DropDownListFor(m => m.User.AreaId,
+            new SelectList(Model.Areas, "Id", "Name"), "Select area",
+            new { @class = "form-control col-sm-12", id = "Area" })
+        }
+        @Html.ValidationMessageFor(m => m.User.AreaId)
+    </div>
+</div>
+
+<div class="row">
+    <div class="form-group col-sm-12">
+        @Html.LabelFor(m => m.User.Address)
+        @Html.TextBoxFor(m => m.User.Address, new { @class = "form-control col-sm-12", @placeholder = "Ex: House: 248, Road: 04, Block: F, Bashundhara, Dhaka - 1214" })
+        @Html.ValidationMessageFor(m => m.User.Address)
+    </div>
+</div>
+
+<div class="row">
+    <div class="form-group col-sm-6">
+        @Html.LabelFor(m => m.User.Email)
+        @Html.TextBoxFor(m => m.User.Email, new { @class = "form-control col-sm-12", @placeholder = "Ex: smith@example.com" })
+        @Html.ValidationMessageFor(m => m.User.Email)
+    </div>
+    <div class="form-group col-sm-6">
+        @Html.LabelFor(m => m.User.Phone)
+        @Html.TextBoxFor(m => m.User.Phone, new { @class = "form-control col-sm-12", @placeholder = "Ex: 01748361433" })
+        @Html.ValidationMessageFor(m => m.User.Phone)
+    </div>
+</div>
+
+<div class="row">
+    <div class="form-group col-sm-12">
+        @Html.LabelFor(m => m.User.Password)
+        @Html.TextBoxFor(m => m.User.Password, new { @class = "form-control col-sm-12", @type = "password", @placeholder = "Minimum 6 characters" })
+        @Html.Raw(HttpUtility.HtmlDecode(@Html.ValidationMessageFor(m => m.User.Password).ToHtmlString()))
+    </div>
+</div>
+
+@Html.HiddenFor(m => m.User.Id)
+@Html.HiddenFor(m => m.User.JoiningDateTime)
+@Html.HiddenFor(m => m.User.UserType)

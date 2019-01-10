@@ -1,0 +1,72 @@
+﻿@model ViewModels.UserFormViewModel
+
+@{
+    if (Model.User.UserType == Models.UserType.Employee)
+    {
+        ViewBag.Title = "Employee Registration";
+    }
+    else
+    {
+        ViewBag.Title = "New";
+    }
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/jscript">
+        $(function () {
+            $('#City').change(function () {
+                $("#Area").html(
+                    "<option value>Select area</option>")
+                $.getJSON('/AreaJsonByCity/AreaList/' + $('#City').val(), function (data) {
+                    $.each(data, function (i, area) {
+                        $("#Area").append(
+                            "<option value=" + area.Value + ">" + area.Text + "</option>")
+                    });
+                });
+            });
+        });
+    </script>
+}
+
+<div class="container">
+    <div class="row" ;>
+        <fieldset class="col-md-6">
+
+            @if (Model.User.UserType == Models.UserType.Consumer)
+            {
+                <legend class="col-form-label-lg">
+                    Register here to get started!!
+                </legend>
+            }
+            else if (Model.User.UserType == Models.UserType.Employee)
+            {
+                <legend class="col-form-label-lg">
+                    Register new employee here
+                </legend>
+            }
+            else
+            {
+                <legend class="col-form-label-lg">
+                    Register New Labour
+                </legend>
+            }
+
+            @using (Html.BeginForm("insert", "user"))
+            {
+                @Html.Partial("../User/_Form", Model)
+
+                @Html.AntiForgeryToken()
+
+                <div class="row" style="margin-top:.7em;margin-bottom:1em;">
+                    <div class="btn-group col-md-12">
+                        <button type="submit" class="btn btn-primary col-md-12">Register</button>
+                    </div>
+                </div>
+            }
+
+        </fieldset>
+    </div>
+</div>

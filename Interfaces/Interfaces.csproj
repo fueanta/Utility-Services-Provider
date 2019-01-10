@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B1C53249-2F76-4EDC-B378-A14A3DBEC637}</ProjectGuid>
+    <ProjectGuid>{5556F279-A8F7-41E9-888F-70329C8CEC5C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Interfaces</RootNamespace>
@@ -41,13 +41,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IUser.cs" />
+    <Compile Include="IArea.cs" />
+    <Compile Include="ICity.cs" />
+    <Compile Include="ILabourAssign.cs" />
+    <Compile Include="IEmployeeInfo.cs" />
+    <Compile Include="ILabourInfo.cs" />
+    <Compile Include="IRequest.cs" />
     <Compile Include="IRepository.cs" />
+    <Compile Include="IService.cs" />
+    <Compile Include="ITransaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Entities\Entities.csproj">
-      <Project>{f3f50d2e-bd69-4137-92e0-b4ee58a16218}</Project>
-      <Name>Entities</Name>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{f71bf2e2-f892-4a74-b1b3-5f2a96631592}</Project>
+      <Name>Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

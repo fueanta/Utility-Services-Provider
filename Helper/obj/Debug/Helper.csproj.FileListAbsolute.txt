@@ -1,6 +1,0 @@
-C:\Users\Taki\source\repos\UtilityServicesProvider\Helper\bin\Debug\Helper.dll
-C:\Users\Taki\source\repos\UtilityServicesProvider\Helper\bin\Debug\Helper.pdb
-C:\Users\Taki\source\repos\UtilityServicesProvider\Helper\obj\Debug\Helper.csprojAssemblyReference.cache
-C:\Users\Taki\source\repos\UtilityServicesProvider\Helper\obj\Debug\Helper.csproj.CoreCompileInputs.cache
-C:\Users\Taki\source\repos\UtilityServicesProvider\Helper\obj\Debug\Helper.dll
-C:\Users\Taki\source\repos\UtilityServicesProvider\Helper\obj\Debug\Helper.pdb

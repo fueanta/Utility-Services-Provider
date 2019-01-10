@@ -1,11 +1,11 @@
 ﻿using Data;
-using Entities;
 using Interfaces;
+using Models;
 
 namespace Repositories
 {
     public class CityRepository : Repository<City>, ICity
     {
-        public CityRepository(DB_Context context) : base(context) { }
+        public CityRepository(UspDbContext dbContext) : base(dbContext) { }
     }
 }

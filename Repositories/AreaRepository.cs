@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Data;
-using Entities;
 using Interfaces;
+using Models;
 
 namespace Repositories
 {
     public class AreaRepository : Repository<Area>, IArea
     {
-        public AreaRepository(DB_Context context) : base(context) { }
+        public AreaRepository(UspDbContext dbContext) : base(dbContext) { }
 
         public IEnumerable<Area> GetAreasByCityId(int? cityId)
         {

@@ -1,0 +1,36 @@
+﻿@model Models.User
+
+@{
+    ViewBag.Title = "User | Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var user = Application.Controllers.HomeController.LoggedUser;
+}
+
+<h2>Hello @user.FirstName!</h2>
+
+@section Scripts {
+    <script>
+
+        $(document).ready(function () {
+
+            // highlight current page on navbar
+            $(function () {
+                // this will get the full URL at the address bar
+                var url = window.location.href;
+
+                // passes on every "a" tag
+                $("#navbarColor01 ul li a").each(function () {
+                    // checks if its the same on the address bar
+                    if (url == (this.href)) {
+                        $(this).closest("li").addClass("active");
+                        //for making parent of submenu active
+                        $(this).closest("li").parent().parent().addClass("active");
+                    }
+                });
+            });
+
+        });
+
+    </script>
+}

@@ -1,0 +1,218 @@
+﻿@{
+    ViewBag.Title = "Services";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    // var user = Application.Controllers.HomeController.LoggedUser;
+}
+
+<fieldset>
+    <legend class="ml-2">List of services:</legend>
+
+    <div class="ml-3 mt-2 mb-3">
+        <button class="btn btn-outline-primary" onclick="popUpForm('@Url.Action("AddOrEdit", "Service")')"><i class="fas fa-plus"></i> Add New</button>
+    </div>
+
+    <table id="myTable" class="table table-borderless table-hover" style="width:100%">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col" style="width: 7%"><i class="fas fa-hashtag"></i> Id</th>
+                <th scope="col"><i class="far fa-square"></i> Name</th>
+                <th scope="col"><i class="far fa-clock"></i> Probable Duration</th>
+                <th scope="col"><i class="fas fa-money-bill-wave"></i> Consumer Charge</th>
+                <th scope="col"><i class="fas fa-money-bill-wave"></i> Labour Charge</th>
+                <th scope="col" style="width: 15%"><i class="fas fa-exclamation-circle"></i> Actions</th>
+            </tr>
+        </thead>
+    </table>
+</fieldset>
+
+@section Scripts {
+
+    <script>
+
+        var dataTable, popUp, editBtn, deleteBtn;
+
+        $(document).ready(function () {
+
+            // fix- dropdown control access after jquery dialog
+            $(".dropdown-toggle").dropdown();
+            
+            // highlight current page on navbar
+            $(function () {
+                // this will get the full URL at the address bar
+                var url = window.location.href;
+
+                // passes on every "a" tag
+                $("#navbarColor01 ul li a").each(function () {
+                    // checks if its the same on the address bar
+                    if (url == (this.href)) {
+                        $(this).closest("li").addClass("active");
+                        //for making parent of submenu active
+                        $(this).closest("li").parent().parent().addClass("active");
+                    }
+                });
+            });
+
+            // delete button event handler
+            $("#myTable").on("click", ".js-delete", function () {
+                var button = $(this);
+
+                bootbox.confirm("Are you sure to delete this service?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/services/" + button.attr("row-id"),
+                            method: "DELETE",
+                            success: function () {
+                                button.parents("tr").remove();
+                            }
+                        });
+                    }
+                });
+            });
+
+            // data table configuration
+            dataTable = $("#myTable").DataTable({
+
+                dom:
+                    "<'row'<'col-sm-7'B><'col-sm-5'f>>" +
+                    "<'row'<'col-sm-12'tr>>" +
+                    "<'row'<'col-sm-5 mt-1'i><'col-sm-2 mt-3'l><'col-sm-5 mt-2'p>>",
+
+                //dom: 'Bfrtip',
+
+                stateSave: true,
+
+                'iDisplayLength': 5, // num of rows in a page by default
+
+                "lengthMenu": [[5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, "All"]], // number of rows to show
+
+                "pagingType": "full_numbers", // numbers, simple, simple_numbers, full, full_numbers, first_last_numbers
+
+                // defining the nature of columns
+                'columnDefs': [
+                    { 'targets': [5], 'className': 'text-center', 'sortable': false, 'searchable': false }
+                ],
+
+                buttons: [
+                    //'pageLength', 'print', 'copy', 'excel', 'csv', 'pdf', 'colvis'
+
+                    { extend: 'print', text: '<i class="fas fa-print"></i> Print', exportOptions: { columns: [0, 1, 2, 3, 4] } },
+                    { extend: 'copy', text: '<i class="far fa-copy"></i> Copy to clipboard', exportOptions: { modifier: { page: 'all' }, columns: [0, 1, 2, 3, 4] } },
+                    { extend: 'excel', text: '<i class="far fa-file-excel"></i> Export to Excel', filename: 'Record_Excel', exportOptions: { modifier: { page: 'all' }, columns: [0, 1, 2, 3, 4] } },
+                    //{ extend: 'csv', text: '<i class="fas fa-file-csv"></i>', titleAttr: 'Export to CSV', filename: 'Record_Csv', exportOptions: { modifier: { page: 'all' }, columns: [0, 1, 2, 3, 4] } },
+                    { extend: 'pdf', text: '<i class="far fa-file-pdf"></i> Export to PDF', filename: 'Record_Pdf', orientation: 'Portrait', pageSize: 'LEGAL', exportOptions: { modifier: { page: 'all' }, columns: [0, 1, 2, 3, 4] } },
+                    { extend: 'colvis', text: '<i class="fas fa-columns"></i> Columns' }
+
+                ],
+
+                ajax: {
+                    url: "/api/services",
+                    dataSrc: ""
+                },
+
+                columns: [
+                    {
+                        data: "id"
+                    },
+                    {
+                        data: "name"
+                    },
+                    {
+                        data: "probableDurationInHours",
+                        render: function (data, type, service) {
+                            return data + ' hour(s)';
+                        }
+                    },
+                    {
+                        data: "consumerCharge",
+                        render: function (data, type, service) {
+                            return data + ' Tk';
+                        }
+                    },
+                    {
+                        data: "labourCharge",
+                        render: function (data, type, service) {
+                            return data + ' Tk';
+                        }
+                    }
+                    ,
+                    {
+                        data: "id",
+                        render: function (data, type, service) {
+                            editBtn = '<button class="btn btn-outline-info"><i class="far fa-edit"></i> Modify</button>';
+                            deleteBtn = '<button class="btn btn-outline-danger js-delete" row-id=' + data + '><i class="fas fa-trash-alt"></i> Delete</button>';
+                            return '<div class="btn-group">' + editBtn + deleteBtn + '</div>';
+                        }
+                    }
+                ],
+
+                "language": {
+                    //search: "_INPUT_",
+                    searchPlaceholder: "Search anything ...",
+                    "lengthMenu": "Display _MENU_ rows",
+                    //"zeroRecords": "Nothing found - sorry",
+                    //"info": "Showing page _PAGE_ of _PAGES_",
+                    //"infoEmpty": "No records available",
+                    //"infoFiltered": "(filtered from _MAX_ total records)"
+                }
+            });
+        });
+
+        // popup
+        function popUpForm(url) {
+            var formDiv = $('<div/>');
+            $.get(url)
+            .done(function (response) {
+                formDiv.html(response);
+
+                popUp = formDiv.dialog({
+                    autoOpen: true,
+                    resizable: true,
+                    title: 'Service Details',
+                    height: 420,
+                    width: 650,
+                    open: function () {
+                        // fix- close button
+                        var closeBtn = $('.ui-dialog-titlebar-close');
+                        closeBtn.html('<i class="fas fa-times"></i></button>');
+                    },
+                    close: function () {
+                        popUp.dialog('destroy').remove();
+                    }
+                });
+            });
+        }
+
+        // form submit
+        function submitForm(form) {
+
+            // validate
+            $.validator.unobtrusive.parse(form);
+
+            // if valid
+            if ($(form).valid()) {
+                // api post request
+                $.ajax({
+                    type: "POST",
+                    url: "/api/services",
+                    data: $(form).serialize(),
+
+                    success: function (data, textStatus, xhr) {
+                        if (xhr.status == "201") {
+                            popUp.dialog('close');
+                            dataTable.ajax.reload();
+
+                            $.notify("Service added successfully", {
+                                globalPosition: "top center",
+                                className: "success"
+                            });
+                        }
+                    }
+                });
+            }
+            return false;
+        }
+
+    </script>
+
+}

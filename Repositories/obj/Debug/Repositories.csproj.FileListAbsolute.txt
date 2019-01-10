@@ -1,32 +1,19 @@
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\Repositories.dll.config
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\Repositories.dll
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\Repositories.pdb
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\Data.dll
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\Entities.dll
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\EntityFramework.dll
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\Interfaces.dll
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\System.Web.Mvc.dll
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\Data.pdb
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\Data.dll.config
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\Entities.pdb
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\Interfaces.pdb
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\EntityFramework.xml
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\obj\Debug\Repositories.csprojAssemblyReference.cache
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\obj\Debug\Repositories.csproj.CoreCompileInputs.cache
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\obj\Debug\Repositories.csproj.CopyComplete
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\obj\Debug\Repositories.dll
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\obj\Debug\Repositories.pdb
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\Microsoft.Web.Infrastructure.dll
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\System.Web.Helpers.dll
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\System.Web.Razor.dll
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\System.Web.WebPages.Deployment.dll
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\System.Web.WebPages.dll
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\System.Web.WebPages.Razor.dll
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\System.Web.Helpers.xml
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\System.Web.Mvc.xml
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\System.Web.Razor.xml
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\System.Web.WebPages.xml
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\System.Web.WebPages.Deployment.xml
-C:\Users\Taki\source\repos\UtilityServicesProvider\Repositories\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\ahmad\source\repos\Utility Services Provider\Repositories\bin\Debug\Repositories.dll
+C:\Users\ahmad\source\repos\Utility Services Provider\Repositories\bin\Debug\Repositories.pdb
+C:\Users\ahmad\source\repos\Utility Services Provider\Repositories\obj\Debug\Repositories.csproj.CoreCompileInputs.cache
+C:\Users\ahmad\source\repos\Utility Services Provider\Repositories\obj\Debug\Repositories.dll
+C:\Users\ahmad\source\repos\Utility Services Provider\Repositories\obj\Debug\Repositories.pdb
+C:\Users\ahmad\source\repos\Utility Services Provider\Repositories\bin\Debug\Interfaces.dll
+C:\Users\ahmad\source\repos\Utility Services Provider\Repositories\bin\Debug\Models.dll
+C:\Users\ahmad\source\repos\Utility Services Provider\Repositories\bin\Debug\Interfaces.pdb
+C:\Users\ahmad\source\repos\Utility Services Provider\Repositories\bin\Debug\Models.pdb
+C:\Users\ahmad\source\repos\Utility Services Provider\Repositories\obj\Debug\Repositories.csprojAssemblyReference.cache
+C:\Users\ahmad\source\repos\Utility Services Provider\Repositories\obj\Debug\Repositories.csproj.CopyComplete
+C:\Users\ahmad\source\repos\Utility Services Provider\Repositories\bin\Debug\Data.dll
+C:\Users\ahmad\source\repos\Utility Services Provider\Repositories\bin\Debug\EntityFramework.dll
+C:\Users\ahmad\source\repos\Utility Services Provider\Repositories\bin\Debug\Data.pdb
+C:\Users\ahmad\source\repos\Utility Services Provider\Repositories\bin\Debug\Data.dll.config
+C:\Users\ahmad\source\repos\Utility Services Provider\Repositories\bin\Debug\EntityFramework.xml
+C:\Users\ahmad\source\repos\Utility Services Provider\Repositories\bin\Debug\Repositories.dll.config
+C:\Users\ahmad\source\repos\Utility Services Provider\Repositories\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ahmad\source\repos\Utility Services Provider\Repositories\bin\Debug\EntityFramework.SqlServer.xml

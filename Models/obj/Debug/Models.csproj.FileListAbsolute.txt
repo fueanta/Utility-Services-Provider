@@ -1,0 +1,6 @@
+C:\Users\ahmad\source\repos\Utility Services Provider\Models\bin\Debug\Models.dll
+C:\Users\ahmad\source\repos\Utility Services Provider\Models\bin\Debug\Models.pdb
+C:\Users\ahmad\source\repos\Utility Services Provider\Models\obj\Debug\Models.csprojAssemblyReference.cache
+C:\Users\ahmad\source\repos\Utility Services Provider\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+C:\Users\ahmad\source\repos\Utility Services Provider\Models\obj\Debug\Models.dll
+C:\Users\ahmad\source\repos\Utility Services Provider\Models\obj\Debug\Models.pdb

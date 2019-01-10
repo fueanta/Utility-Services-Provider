@@ -1,23 +1,16 @@
-C:\Users\Taki\source\repos\UtilityServicesProvider\Data\bin\Debug\Data.dll.config
-C:\Users\Taki\source\repos\UtilityServicesProvider\Data\bin\Debug\Data.dll
-C:\Users\Taki\source\repos\UtilityServicesProvider\Data\bin\Debug\Data.pdb
-C:\Users\Taki\source\repos\UtilityServicesProvider\Data\bin\Debug\Entities.dll
-C:\Users\Taki\source\repos\UtilityServicesProvider\Data\bin\Debug\EntityFramework.dll
-C:\Users\Taki\source\repos\UtilityServicesProvider\Data\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Taki\source\repos\UtilityServicesProvider\Data\bin\Debug\Entities.pdb
-C:\Users\Taki\source\repos\UtilityServicesProvider\Data\bin\Debug\EntityFramework.xml
-C:\Users\Taki\source\repos\UtilityServicesProvider\Data\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Taki\source\repos\UtilityServicesProvider\Data\obj\Debug\Data.csprojAssemblyReference.cache
-C:\Users\Taki\source\repos\UtilityServicesProvider\Data\obj\Debug\Data.Migrations.Init.resources
-C:\Users\Taki\source\repos\UtilityServicesProvider\Data\obj\Debug\Data.Migrations.GenderAdded.resources
-C:\Users\Taki\source\repos\UtilityServicesProvider\Data\obj\Debug\Data.Migrations.PopulateCitiesNAreas.resources
-C:\Users\Taki\source\repos\UtilityServicesProvider\Data\obj\Debug\Data.Migrations.JqueryCityArea.resources
-C:\Users\Taki\source\repos\UtilityServicesProvider\Data\obj\Debug\Data.Migrations.UserTypeEnum.resources
-C:\Users\Taki\source\repos\UtilityServicesProvider\Data\obj\Debug\Data.csproj.GenerateResource.cache
-C:\Users\Taki\source\repos\UtilityServicesProvider\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
-C:\Users\Taki\source\repos\UtilityServicesProvider\Data\obj\Debug\Data.csproj.CopyComplete
-C:\Users\Taki\source\repos\UtilityServicesProvider\Data\obj\Debug\Data.dll
-C:\Users\Taki\source\repos\UtilityServicesProvider\Data\obj\Debug\Data.pdb
-C:\Users\Taki\source\repos\UtilityServicesProvider\Data\obj\Debug\Data.Migrations.EmployeeAddition.resources
-C:\Users\Taki\source\repos\UtilityServicesProvider\Data\obj\Debug\Data.Migrations.FakeId.resources
-C:\Users\Taki\source\repos\UtilityServicesProvider\Data\obj\Debug\Data.Migrations.AdditionOfLabours.resources
+C:\Users\ahmad\source\repos\Utility Services Provider\Data\bin\Debug\Data.dll.config
+C:\Users\ahmad\source\repos\Utility Services Provider\Data\bin\Debug\Data.dll
+C:\Users\ahmad\source\repos\Utility Services Provider\Data\bin\Debug\Data.pdb
+C:\Users\ahmad\source\repos\Utility Services Provider\Data\bin\Debug\EntityFramework.dll
+C:\Users\ahmad\source\repos\Utility Services Provider\Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ahmad\source\repos\Utility Services Provider\Data\bin\Debug\Models.dll
+C:\Users\ahmad\source\repos\Utility Services Provider\Data\bin\Debug\Models.pdb
+C:\Users\ahmad\source\repos\Utility Services Provider\Data\bin\Debug\EntityFramework.xml
+C:\Users\ahmad\source\repos\Utility Services Provider\Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ahmad\source\repos\Utility Services Provider\Data\obj\Debug\Data.csprojAssemblyReference.cache
+C:\Users\ahmad\source\repos\Utility Services Provider\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+C:\Users\ahmad\source\repos\Utility Services Provider\Data\obj\Debug\Data.csproj.CopyComplete
+C:\Users\ahmad\source\repos\Utility Services Provider\Data\obj\Debug\Data.dll
+C:\Users\ahmad\source\repos\Utility Services Provider\Data\obj\Debug\Data.pdb
+C:\Users\ahmad\source\repos\Utility Services Provider\Data\obj\Debug\Data.Migrations.Init.resources
+C:\Users\ahmad\source\repos\Utility Services Provider\Data\obj\Debug\Data.csproj.GenerateResource.cache

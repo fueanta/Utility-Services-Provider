@@ -1,0 +1,45 @@
+﻿@model ViewModels.LoginFormViewModel
+
+@{
+    ViewBag.Title = "Log In";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<fieldset>
+    <legend style="margin-bottom:1em">Log into your account</legend>
+
+    @if (Model != null)
+    {
+        <label style="color:red;">Invalid email / phone or password.</label>
+    }
+
+    @using (Html.BeginForm("LogInSubmission", "Home"))
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.UserLogin.EmailOrPhone)
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                </div>
+                @Html.TextBoxFor(m => m.UserLogin.EmailOrPhone, new { @class = "form-control", @placeholder = "Ex: smith@outlook.com / 01715885218" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.UserLogin.Password)
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                </div>
+                @Html.TextBoxFor(m => m.UserLogin.Password, new { @class = "form-control", @type = "password", @placeholder = "Enter your password" })
+            </div>
+        </div>
+
+        <div style="margin-top:1em;" class="checkbox">
+            @Html.CheckBoxFor(m => m.DoRememberMe) Remember Me
+        </div>
+
+        <button style="margin-top:2em" type="submit" class="btn btn-primary">Log In</button>
+    }
+
+</fieldset>
