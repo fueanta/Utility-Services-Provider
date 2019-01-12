@@ -1,0 +1,20 @@
+﻿@{
+    Layout = null;
+}
+
+@using (Html.BeginForm("", "", FormMethod.Post, new { id = "form", name = "form", onsubmit = "return editBtnSubmit(this)" }))
+{
+    <div class="container col-md-12">
+
+        @Html.Partial("_Form")
+
+        <div class="row mt-2">
+            <div class="form-group col-md-6">
+                <button type="submit" class="btn btn-outline-success col-md-12"><i class="far fa-save"></i> Save</button>
+            </div>
+            <div class="form-group col-md-6">
+                <button type="reset" class="btn btn-outline-warning col-md-12"><i class="fas fa-broom"></i> Reset</button>
+            </div>
+        </div>
+    </div>
+}

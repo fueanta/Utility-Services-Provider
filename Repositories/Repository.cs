@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using Data;
 using Interfaces;
@@ -33,7 +35,8 @@ namespace Repositories
 
         public int Update(T g)
         {
-            Context.Entry<T>(g).State = System.Data.Entity.EntityState.Modified;
+            //Context.Entry(g).State = EntityState.Modified;
+            Context.Set<T>().AddOrUpdate(g);
             return Context.SaveChanges();
         }
 

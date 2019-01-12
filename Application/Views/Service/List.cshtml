@@ -8,8 +8,8 @@
 <fieldset>
     <legend class="ml-2">List of services:</legend>
 
-    <div class="ml-3 mt-2 mb-3">
-        <button class="btn btn-outline-primary" onclick="popUpForm('@Url.Action("AddOrEdit", "Service")')"><i class="fas fa-plus"></i> Add New</button>
+    <div id="addBtn" class="ml-3 mt-2 mb-3">
+        <button class="btn btn-outline-primary" onclick="popUpForm('@Url.Action("add", "service")')"><i class="fas fa-plus"></i> Add New</button>
     </div>
 
     <table id="myTable" class="table table-borderless table-hover" style="width:100%">
@@ -30,7 +30,7 @@
 
     <script>
 
-        var dataTable, popUp, editBtn, deleteBtn;
+        var dataTable, popUp;
 
         $(document).ready(function () {
 
@@ -53,22 +53,6 @@
                 });
             });
 
-            // delete button event handler
-            $("#myTable").on("click", ".js-delete", function () {
-                var button = $(this);
-
-                bootbox.confirm("Are you sure to delete this service?", function (result) {
-                    if (result) {
-                        $.ajax({
-                            url: "/api/services/" + button.attr("row-id"),
-                            method: "DELETE",
-                            success: function () {
-                                button.parents("tr").remove();
-                            }
-                        });
-                    }
-                });
-            });
 
             // data table configuration
             dataTable = $("#myTable").DataTable({
@@ -139,7 +123,8 @@
                     {
                         data: "id",
                         render: function (data, type, service) {
-                            editBtn = '<button class="btn btn-outline-info"><i class="far fa-edit"></i> Modify</button>';
+                            var editBtn, deleteBtn;
+                            editBtn = '<button class="btn btn-outline-info js-edit" onclick="popUpForm(\'/service/edit/' + data + '\')" row-id=' + data + '><i class="far fa-edit"></i> Modify</button>';
                             deleteBtn = '<button class="btn btn-outline-danger js-delete" row-id=' + data + '><i class="fas fa-trash-alt"></i> Delete</button>';
                             return '<div class="btn-group">' + editBtn + deleteBtn + '</div>';
                         }
@@ -156,6 +141,11 @@
                     //"infoFiltered": "(filtered from _MAX_ total records)"
                 }
             });
+
+            //refresh at an interval
+            setInterval(function () {
+                dataTable.ajax.reload(null, false); // user paging is not reset on reload
+            }, 10000); // 10 sec
         });
 
         // popup
@@ -183,8 +173,8 @@
             });
         }
 
-        // form submit
-        function submitForm(form) {
+        // new entry submit
+        function addBtnSubmit(form) {
 
             // validate
             $.validator.unobtrusive.parse(form);
@@ -198,20 +188,79 @@
                     data: $(form).serialize(),
 
                     success: function (data, textStatus, xhr) {
-                        if (xhr.status == "201") {
-                            popUp.dialog('close');
-                            dataTable.ajax.reload();
+                        popUp.dialog('close');
 
-                            $.notify("Service added successfully", {
-                                globalPosition: "top center",
-                                className: "success"
-                            });
-                        }
+                        // go to last page
+                        $("#myTable").DataTable().page('last').draw('page');
+
+                        // reload without changing the page
+                        dataTable.ajax.reload(null, false);
+
+                        $("#addBtn").notify(
+                            "New record [" + data.id + "] has been ADDED!",
+                            { position: "top center", className: "success" }
+                        );
                     }
                 });
             }
             return false;
         }
+
+        // modified entry submit
+        function editBtnSubmit(form) {
+
+            // validate
+            $.validator.unobtrusive.parse(form);
+
+            // if valid
+            if ($(form).valid()) {
+                // id of the record to be modified
+                var id = document.getElementById("id").value;
+
+                // api post request
+                $.ajax({
+                    type: "PUT",
+                    url: "/api/services/" + id,
+                    data: $(form).serialize(),
+
+                    success: function (data, textStatus, xhr) {
+                        popUp.dialog('close');
+
+                        // reload without changing the page
+                        dataTable.ajax.reload(null, false);
+
+                        $("#addBtn").notify(
+                            "Record [" + id + "] has been UPDATED!",
+                            { position: "top center", className: "success" }
+                        );
+                    }
+                });
+            }
+            return false;
+        }
+
+        // delete button event handler
+        $("#myTable").on("click", ".js-delete", function () {
+            var button = $(this);
+            var id = button.attr("row-id");
+
+            bootbox.confirm("Are you sure to delete this service?", function (result) {
+                if (result) {
+                    $.ajax({
+                        url: "/api/services/" + id,
+                        method: "DELETE",
+                        success: function () {
+                            button.parents("tr").remove();
+
+                            $("#addBtn").notify(
+                                "Record [" + id + "] has been DELETED!",
+                                { position: "top center", className: "error" }
+                            );
+                        }
+                    });
+                }
+            });
+        });
 
     </script>
 

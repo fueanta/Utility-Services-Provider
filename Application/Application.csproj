@@ -592,7 +592,9 @@
     <Content Include="Views\User\Employees.cshtml" />
     <Content Include="Views\User\Add.cshtml" />
     <Content Include="Views\Service\List.cshtml" />
-    <Content Include="Views\Service\AddOrEdit.cshtml" />
+    <Content Include="Views\Service\Add.cshtml" />
+    <Content Include="Views\Service\_Form.cshtml" />
+    <Content Include="Views\Service\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -49,7 +49,9 @@ namespace Application.Controllers.API
             var serviceInDb = _serviceRepo.Get(id);
             if (serviceInDb == null)
                 return NotFound();
+
             _serviceRepo.Update(service);
+
             return Ok();
         }
 

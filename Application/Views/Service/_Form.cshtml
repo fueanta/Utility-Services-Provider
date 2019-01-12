@@ -1,0 +1,52 @@
+﻿@model Models.Service
+
+@Html.HiddenFor(m => m.Id, new { id = "id", name = "id" })
+@Html.ValidationSummary(true, "Your attention is required in the following marked areas")
+
+<div class="row">
+    <div class="form-group col-md-6">
+        @Html.LabelFor(m => m.Name, new { @class = "control-label" })
+        @Html.EditorFor(m => m.Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Ex: Washing Machine Repairing" } })
+        @Html.ValidationMessageFor(m => m.Name)
+    </div>
+    <div class="form-group col-md-6">
+        @Html.LabelFor(m => m.ProbableDurationInHours, new { @class = "control-label" })
+        <div class="input-group mb-3">
+            @Html.EditorFor(m => m.ProbableDurationInHours, new { htmlAttributes = new { @class = "form-control", @placeholder = "Ex: 2" } })
+            <div class="input-group-append">
+                <span class="input-group-text">hour(s)</span>
+            </div>
+        </div>
+        @Html.ValidationMessageFor(m => m.ProbableDurationInHours)
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-12" style="margin-top:-1em;">
+        @Html.LabelFor(m => m.Description, new { @class = "control-label" })
+        @Html.EditorFor(m => m.Description, new { htmlAttributes = new { @class = "form-control col-md-12", @placeholder = "Description of the service in 150 characters" } })
+        @Html.ValidationMessageFor(m => m.Description)
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-6">
+        @Html.LabelFor(m => m.ConsumerCharge, new { @class = "control-label" })
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Tk.</span>
+            </div>
+            @Html.EditorFor(m => m.ConsumerCharge, new { htmlAttributes = new { @class = "form-control", @placeholder = "Ex: 2000" } })
+        </div>
+        @Html.ValidationMessageFor(m => m.ConsumerCharge)
+    </div>
+    <div class="form-group col-md-6">
+        @Html.LabelFor(m => m.LabourCharge, new { @class = "control-label" })
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Tk.</span>
+            </div>
+            @Html.EditorFor(m => m.LabourCharge, new { htmlAttributes = new { @class = "form-control", @placeholder = "Ex: 100" } })
+        </div>
+        @Html.ValidationMessageFor(m => m.LabourCharge)
+    </div>
+</div>
+

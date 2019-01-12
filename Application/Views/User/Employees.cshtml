@@ -145,6 +145,11 @@
                 }
             });
 
+            //refresh at an interval
+            setInterval(function () {
+                dataTable.ajax.reload(null, false); // user paging is not reset on reload
+            }, 10000); // 10 sec
+
         });
 
     </script>
